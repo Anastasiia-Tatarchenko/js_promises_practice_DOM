@@ -3,7 +3,7 @@
 const firstPromise = new Promise((resolve, reject) => {
   const handler = () => {
     resolve();
-    document.removeEventListener('click', resolve);
+    document.addEventListener('click', resolve);
   };
 
   document.addEventListener('click', handler);
@@ -14,8 +14,8 @@ const firstPromise = new Promise((resolve, reject) => {
 const secondPromise = new Promise((resolve, reject) => {
   const handler = () => {
     resolve();
-    document.removeEventListener('click', resolve);
-    document.removeEventListener('contextmenu', resolve);
+    document.addEventListener('click', resolve);
+    document.addEventListener('contextmenu', resolve);
   };
 
   document.addEventListener('contextmenu', handler);
@@ -31,8 +31,8 @@ const thirdPromise = new Promise((resolve, reject) => {
 
     if (right) {
       resolve();
-      document.removeEventListener('click', leftClick);
-      document.removeEventListener('contextmenu', rightClick);
+      document.addEventListener('click', leftClick);
+      document.addEventListener('contextmenu', rightClick);
     }
   };
 
@@ -41,8 +41,8 @@ const thirdPromise = new Promise((resolve, reject) => {
 
     if (left) {
       resolve();
-      document.removeEventListener('click', leftClick);
-      document.removeEventListener('contextmenu', rightClick);
+      document.addEventListener('click', leftClick);
+      document.addEventListener('contextmenu', rightClick);
     }
   };
 
